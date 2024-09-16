@@ -13,11 +13,7 @@ export async function getWeather(location) {
     try {
       const response = await fetch(url, options);
       const result = await response.text();
-      // location.weather = JSON.parse(result);
       return JSON.parse(result);
-      // props.incidents[index].weather = JSON.parse(result);
-      // weatherData.value.push(JSON.parse(result));
-      // console.log("RESULT", fileArray);
     } catch (error) {
       console.error(error);
     }
