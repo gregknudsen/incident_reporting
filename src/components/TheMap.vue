@@ -17,16 +17,16 @@ const mapContainer = ref();
 const data = ref([]);
 
 onMounted(() => {
-  map.value = L.map(mapContainer.value).setView([37.541885, -77.440624], 11);
-  fileArray.forEach((location) => {
-    console.log(location.data.address.latitude);
+  // Would want to generalize this location, but just using initial incident location
+  map.value = L.map(mapContainer.value).setView([37.541885, -77.440624], 12);
 
+  fileArray.forEach((location) => {
     L.marker([location.data.address.latitude, location.data.address.longitude])
       .addTo(map.value)
-      .on("mouseover", (e) => {
+      .on("click", (e) => {
         // e.preventDefault();
 
-        console.log("HOVER", e);
+        console.log(`You just clicked ${location.data.description.comments}`);
       });
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
@@ -40,17 +40,20 @@ onMounted(() => {
 <template>
   <div class="mainContainer">
     <div id="map" ref="mapContainer"></div>
-    <TheList :incidents="fileArray" id="info" />
+    <div>
+      <TheList :incidents="fileArray" id="info" />
+    </div>
   </div>
 </template>
 
 <style>
 .mainContainer {
   display: flex;
+  /* justify-content: center; */
 }
 
 #map {
   height: 100vh;
-  width: 1000px;
+  min-width: 1000px;
 }
 </style>
