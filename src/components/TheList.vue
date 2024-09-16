@@ -2,14 +2,21 @@
   <div class="list-container">
     <h1>INCIDENT LIST</h1>
     <div v-for="(item, index) in props.incidents">
-      <p>Date: {{ item.data.description.event_opened }}</p>
-      <p>City: {{ item.data.address.city }}</p>
-      <p>Address: {{ item.data.address.address_line1 }}</p>
-      <p>Responder: {{ item.data.fire_department.name }}</p>
-
+      <p><span class="bold-text"> Date</span> {{ item.data.description.event_opened }}</p>
+      <p><span class="bold-text"> City</span> {{ item.data.address.city }}</p>
+      <p><span class="bold-text"> Address</span> {{ item.data.address.address_line1 }}</p>
+      <p>
+        <span class="bold-text"> Responder</span> {{ item.data.fire_department.name }}
+      </p>
+      <!-- ADD SUB_TYPE for overview -->
       <p class="bold-text">Weather Info</p>
-      <p>Average Temparature {{ averageTemps[index] }} °F</p>
-      <p>Average Precipitation {{ averagePrecipitations[index] }}"</p>
+      <p>
+        <span class="bold-text"> Average Temparature</span> {{ averageTemps[index] }} °F
+      </p>
+      <p>
+        <span class="bold-text"> Average Precipitation</span>
+        {{ averagePrecipitations[index] }}"
+      </p>
       <hr />
     </div>
   </div>
