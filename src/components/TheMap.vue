@@ -17,19 +17,23 @@ const mapContainer = ref();
 const data = ref([]);
 
 onMounted(() => {
-  map.value = L.map(mapContainer.value).setView([37.466513, -77.428683], 13);
-  L.marker([37.466513, -77.428683])
-    .addTo(map.value)
-    .on("mouseover", (e) => {
-      // e.preventDefault();
+  map.value = L.map(mapContainer.value).setView([37.541885, -77.440624], 11);
+  fileArray.forEach((location) => {
+    console.log(location.data.address.latitude);
 
-      console.log("HOVER", e);
-    });
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution:
-      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-  }).addTo(map.value);
+    L.marker([location.data.address.latitude, location.data.address.longitude])
+      .addTo(map.value)
+      .on("mouseover", (e) => {
+        // e.preventDefault();
+
+        console.log("HOVER", e);
+      });
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }).addTo(map.value);
+  });
 });
 </script>
 
