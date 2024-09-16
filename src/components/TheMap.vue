@@ -10,8 +10,6 @@ const fileArray = Object.values(files).map((file) => {
   };
 });
 
-console.log(fileArray);
-
 const lat = ref(0);
 const lng = ref(0);
 const map = ref();
@@ -38,7 +36,7 @@ onMounted(() => {
 <template>
   <div class="mainContainer">
     <div id="map" ref="mapContainer"></div>
-    <TheList incidents="fileArray" id="info" />
+    <TheList :incidents="fileArray" id="info" />
   </div>
 </template>
 
