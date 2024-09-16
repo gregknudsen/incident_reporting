@@ -12,4 +12,11 @@ import TheMap from './components/TheMap.vue'
   </main>
 </template>
 
+<style>
+
+main {
+  height: 800px;
+}
+</style>
+
 
