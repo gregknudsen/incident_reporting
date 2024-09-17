@@ -248,9 +248,9 @@
     "description": {
         "comments": "** LOI search completed at 05/15/17 13:19:12 SPECIAL ADDRESS COMMENT: ***RFD: TARGET HAZARD*** ** Case number C201713827 has been assigned to event F01705150050 ** >>>> by: NANCY L. MOREY on terminal: ecc-f1 OLD BOX OF CHEMICALS WANTS IT TO BE CHECKED OUT *****************TAC 3******************* T22/H2/H3 OS - LT FROM T22 HAS CMD",
         "day_of_week": "Monday",
-        "event_closed": "2017-12-18T14:46:46-04:00",
+        "event_closed": "2017-05-15T14:46:46-04:00",
         "event_id": "3587288",
-        "event_opened": "2017-12-18T13:19:12-04:00",
+        "event_opened": "2017-05-15T13:19:12-04:00",
         "extended_data": {
             "dispatch_duration": 18,
             "event_duration": 5254,

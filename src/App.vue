@@ -3,9 +3,11 @@ import TheMap from "./components/TheMap.vue";
 </script>
 
 <template>
-  <h1>Incident Reports</h1>
+  <div class="text-center">
+    <h1>Incident Reports</h1>
+    <h3>Click on each marker for more detailed information</h3>
+  </div>
   <main>
-    <!-- <TheWelcome /> -->
     <TheMap />
   </main>
 </template>
@@ -13,5 +15,9 @@ import TheMap from "./components/TheMap.vue";
 <style>
 main {
   height: 800px;
+}
+
+.text-center {
+  text-align: center;
 }
 </style>

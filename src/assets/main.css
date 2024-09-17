@@ -5,3 +5,7 @@ body {
 .bold-text {
   font-weight: bold;
 }
+
+.bg-grey {
+  background-color: lightgray;
+}

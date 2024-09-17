@@ -32,19 +32,22 @@ onMounted(async () => {
   map.value = L.map(mapContainer.value).setView([37.541885, -77.440624], 12);
 
   fileArray.forEach(async (location, index) => {
-    L.marker([location.data.address.latitude, location.data.address.longitude])
-      .addTo(map.value)
-      .on("click", (e) => {
-        // e.preventDefault();
+    let marker = L.marker([
+      location.data.address.latitude,
+      location.data.address.longitude,
+    ]).addTo(map.value);
 
-        console.log(`You just clicked ${location.data.description.comments}`);
-      });
+    marker.bindPopup(`
+      <p>ID: ${location.data.description.incident_number}</p>
+      <p>Address: ${location.data.address.address_line1}</p>
+      <p>Summary: ${location.data.description.subtype}</p>
+    `);
+
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
       attribution:
         '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     }).addTo(map.value);
-    // console.log("LOCATION", location);
     location.weather = await getWeather(fileArray[index]);
   });
 });
@@ -53,7 +56,6 @@ onMounted(async () => {
 <style>
 .mainContainer {
   display: flex;
-  /* justify-content: center; */
 }
 
 #info {
