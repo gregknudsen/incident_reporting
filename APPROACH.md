@@ -8,11 +8,11 @@ This was a quick little Vue3 app I spun up to complete the mini project. I chose
 
 - ~ 6 hours
   - 4 hours coding/implementing core functionality
-  - 2 hours clean up/styling/documnetation
+  - 2 hours clean up/styling/documentation
 
 ## TODOS
 
-Clearly, there are **many** items I would have liked to address, but I'll just list a few here.
+Clearly, there are **many** items I would have liked to address, but I'll list a few here.
 
 - I wasn't sure what data was most pertinent to display, so I would definitely work with the stakeholders to determine what data they would want displayed
 - mobile responsiveness
