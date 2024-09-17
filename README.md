@@ -5,10 +5,11 @@ Thanks so much for this opportunity! Please go to [APROACH.md](APPROACH.md) to r
 ## Quick Start
 
 **Install:**
-Navigate to `INCEDENT_REPORTING` in the terminal.
 
-type `npm install`
+- Clone this repository
+- `cd incident_reporting`
+- `npm install`
 
 **Run:**
 
-type `npm run dev`
+- `npm run dev`
